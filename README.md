@@ -63,7 +63,7 @@ KISA 주요정보통신기반시설 기술적 취약점 분석, 평가 가이드
 
 ### 서비스 관리 (U-34 ~ U-63)
 
-점검 스크립트: (서비스 점검 스크립트는 아직 저장소에 없음)
+점검 스크립트: `Service_check.sh`
 
 조치 전 취약 6건 -> 조치 후 전체 양호
 
@@ -132,7 +132,7 @@ MASTER와 keepalived(VRRP) + haproxy로 이중화를 구성하는 SLAVE 노드�
 
 ```
 (저장소 루트)
-  점검 스크립트/   Account_check.sh, File_check.sh, Rest_check.sh
+  점검 스크립트/   Account_check.sh, File_check.sh, Service_check.sh, Rest_check.sh
   images/          조치 전, 조치 후 점검 화면
 ```
 
@@ -144,9 +144,8 @@ sudo bash Account_check.sh
 |---|---|---|
 | Account_check.sh | 계정 관리 U-01 ~ U-06 | 현재 폴더의 `result_account_<날짜>.csv` |
 | File_check.sh | 파일, 디렉터리 관리 U-14 ~ U-33 | 현재 폴더의 `result_file_<날짜>.csv` |
+| Service_check.sh | 서비스 관리 U-34 ~ U-63 | `/root/check/log/result_service_<날짜>.csv` |
 | Rest_check.sh | 계정 U-07 ~ U-13, 파일 U-28, 29, 31 ~ 33, 로그 U-65 ~ U-67 | `/root/check/log/result_rest_<날짜>.csv` |
-
-서비스 관리(U-34 ~ U-63) 점검 스크립트는 아직 이 저장소에 추가되지 않았습니다.
 
 모든 스크립트는 읽기 전용이고 `sudo` 실행을 권장합니다. 일부 항목(U-23, U-33 등)은 목록을 직접 검토해 판정하는 수동확인입니다. 조치는 위 표의 "조치 내용"에 적힌 명령(chmod, 설정 변경 후 서비스 재시작 등)으로 진행했습니다.
 
